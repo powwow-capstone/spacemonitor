@@ -87,8 +87,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 5. Add and commit the changes to the submodule.
 ```
 $ git add frontend
-git commit -m "Updated SimpleMap.js in frontend"
-git push origin <branch>
+$ git commit -m "Updated SimpleMap.js in frontend"
+$ git push origin <branch>
 ```
 
 ## Running with Docker
