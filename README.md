@@ -1,14 +1,17 @@
 # powwowEnergyCapstone
 ## Cloning this repo:
-`git clone --recurse-submodules https://github.com/powwow-capstone/space-monitor-main.git`
+`git clone --recurse-submodules https://github.com/powwow-capstone/spacemonitor.git`
 
 
 ## Committing to Github:
-**Make sure that your submodule branches and root repo branch are the intended branches**
+**Make sure that your submodule branches and root repo branch are on the intended branches for commits**
 
-If typing `git status` returns one of the submodule directories as modified or untracked:
+If typing `git status` returns one of the submodule directories as modified or untracked. 
+
+### Example Commit
+For example, I've updated a file in the `frontend` submodule directory I want to push my updates to BOTH the superproject repo and the submodule repo. Running `git status` in the root directory produces the following output:
 ```
-space-monitor-main bryanwu$ git status
+spacemonitor bryanwu$ git status
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -18,10 +21,31 @@ Changes not staged for commit:
   (commit or discard the untracked or modified content in submodules)
 	modified:   frontend (modified content)
 
-no changes added to commit (use "git add" and/or "git committed -a")
-```
-1. Change to the modified/untracked directory and commit your changes.
-2. Return to root directory and `git add frontend` or `git add backend` (whichever is modified)
+no changes added to commit (use "git add" and/or "git commit -a")
+
+1. Change to the modified/untracked directory.
+`$ cd frontend`
+
+2. Add and commit your changes to the submodule's own repository.
+```$ git add src/components/SimpleMap.js
+$ git commit -m "Updated map"```
+
+3. Push your changes.
+`git push origin <branch>`
+
+4. Return to the root directory. Note that the frontend directory shows "(new commits)" instead of "(modified)" now
+```frontend bryanwu$ cd ..
+spacemonitor bryanwu$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   frontend (new commits)
+
+no changes added to commit (use "git add" and/or "git commit -a")```
+
 
 ## NEW Instructions:
 
