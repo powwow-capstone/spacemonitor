@@ -1,5 +1,6 @@
 # powwowEnergyCapstone
 ## Cloning this repo:
+> **IMPORTANT**
 `git clone --recurse-submodules https://github.com/powwow-capstone/spacemonitor.git`
 
 ## Information about the project repository structure
@@ -33,7 +34,6 @@ $ ./staging
 ## Committing to Github:
 > **Make sure that your submodule branches and root repo branch are on the intended branches for commits**
 
-If typing `git status` returns one of the submodule directories as modified or untracked. 
 
 ### Example Commit
 For example, I've updated a file in the `frontend` submodule directory I want to push my updates to BOTH the superproject repo and the submodule repo. Running `git status` in the project root directory produces the following output:
