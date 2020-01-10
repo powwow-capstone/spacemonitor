@@ -1,4 +1,5 @@
 # powwowEnergyCapstone
+
 ## Cloning this repo:
 > **IMPORTANT**
 ```
@@ -6,15 +7,20 @@ git clone --recurse-submodules https://github.com/powwow-capstone/spacemonitor.g
 ```
 
 ## Information about the project repository structure
-The project root directory currently has 3 main directories: `backend` (submodule), `frontend` (submodule), and `data_analysis`
-Submodules: https://git-scm.com/book/en/v2/Git-Tools-Submodules
+The project root directory currently has 3 main directories: `backend` ([submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)), `frontend` ([submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)), and `data_analysis`.
 
 > Each of the `backend` and `frontend` directories are Github repositories (I'll call them subrepos) and are linked to our working repository as submodules. In order to commit changes in both the superproject repository and the corrpesonding Github repository, we need to commit changes to both the subrepos and the superproject repository. See more about commits in the "Committing to Github" section.
 
 > The `data_analysis` directory is a regular directory.
 
+Additionally, both the `frontend` and `backend` repositories each have a `staging` branch. Every push to the `master` branch of the `frontend` and `backend` repositories will be automatically deployed to the production instance of our Heroku web app. Every push to the `staging` branch of these repositories will be automatically deployed to staging (testing) instance of our Heroku web app.
+
+### For reference:
+* `staging` = testing instance
+* `master` = production instance
 
 ## Switching between the staging and production environments (i.e. staging branch and master branch respectively)
+
 The `staging` and `prod` files are quick and dirty bash scripts for switch between the staging and production development environments respectively.
 
 Make the files executable by running the following in the project root directory:
