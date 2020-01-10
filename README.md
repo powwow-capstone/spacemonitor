@@ -15,6 +15,9 @@ The project root directory currently has 3 main directories: `backend` ([submodu
 
 Additionally, both the `frontend` and `backend` repositories each have a `staging` branch. Every push to the `master` branch of the `frontend` and `backend` repositories will be automatically deployed to the production instance of our Heroku web app. Every push to the `staging` branch of these repositories will be automatically deployed to staging (testing) instance of our Heroku web app.
 
+Production: http://space-monitor.herokuapp.com
+Staging: http://space-monitor-staging.herokuapp.com
+
 ## Switching between the staging and production environments (i.e. staging branch and master branch respectively)
 
 The `staging` and `prod` files are quick and dirty bash scripts for switch between the staging and production development environments respectively.
@@ -71,7 +74,7 @@ $ git commit -m "Updated map"
 git push origin <branch>
 ```
 
-4. Return to the project root directory. Note that the frontend directory shows "(new commits)" instead of "(modified)" now
+4. Return to the project root directory and run `git status`. Note that the frontend directory shows "(new commits)" instead of "(modified)" now
 ```
 $ cd ..
 $ git status
