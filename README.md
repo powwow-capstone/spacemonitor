@@ -43,7 +43,7 @@ $ ./staging
 
 
 ### Example commit
-As an example, I've updated a file in the `frontend` submodule directory I want to push my updates to BOTH the superproject repo and the submodule repo. Running `git status` in the project root directory produces the following output:
+As an example, I've updated a file in the `frontend` submodule directory and I want to push my updates to BOTH the superproject repo and the corresponding submodule repo. Running `git status` in the project root directory produces the following output:
 ```
 $ git status
 On branch master
