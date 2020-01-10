@@ -1,0 +1,14 @@
+.env
+.DS_Store
+node_modules/
+package-lock.json
+.vscode
+plots/
+data/
+*~
+backend/venv
+backend/__pycache__
+backend/migrations/__pycache__
+backend/migrations/versions/__pycache__
+backend/models/__pycache__
+backend/algorithm/__pycache__
