@@ -11,7 +11,7 @@ If typing `git status` returns one of the submodule directories as modified or u
 ### Example Commit
 For example, I've updated a file in the `frontend` submodule directory I want to push my updates to BOTH the superproject repo and the submodule repo. Running `git status` in the root directory produces the following output:
 ```
-spacemonitor bryanwu$ git status
+$ git status
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -34,8 +34,8 @@ $ git commit -m "Updated map"```
 `git push origin <branch>`
 
 4. Return to the root directory. Note that the frontend directory shows "(new commits)" instead of "(modified)" now
-```frontend bryanwu$ cd ..
-spacemonitor bryanwu$ git status
+```$ cd ..
+$ git status
 On branch master
 Your branch is up to date with 'origin/master'.
 
@@ -46,6 +46,10 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")```
 
+5. Add and commit the changes to the submodule.
+```$ git add frontend
+git commit -m "Updated SimpleMap.js in frontend"
+git push origin <branch>```
 
 ## NEW Instructions:
 
