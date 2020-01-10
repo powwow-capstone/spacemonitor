@@ -6,13 +6,13 @@ cyn=$'\e[1;36m'
 end=$'\e[0m'
 
 git checkout staging
-printf "%s\n" "${cyn}Superproject${end} repository ${grn}successfully${end} checked out ${yel}staging${end} branch!"
+printf "%s\n" "${cyn}powwow-capstone/spacemonitor${end} repository ${grn}successfully${end} checked out ${yel}staging${end} branch!"
 cd backend
 git fetch
 git checkout staging
-printf "%s\n" "${cyn}Backend${end} repository ${grn}successfully${end} checked out ${yel}staging${end} branch!"
+printf "%s\n" "${cyn}powwow-capstone/backend${end} repository ${grn}successfully${end} checked out ${yel}staging${end} branch!"
 cd ../frontend
 git fetch
 git checkout staging
-printf "%s\n" "${cyn}Frontend${end} repository ${grn}successfully${end} checked out ${yel}staging${end} branch!"
+printf "%s\n" "${cyn}powwow-capstone/frontend${end} repository ${grn}successfully${end} checked out ${yel}staging${end} branch!"
 cd ..
