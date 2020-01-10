@@ -2,6 +2,24 @@
 ## Cloning this repo:
 `git clone --recurse-submodules https://github.com/powwow-capstone/spacemonitor.git`
 
+## Switching between the staging and production environments (i.e. staging branch and master branch respectively)
+The `staging` and `prod` files are quick and dirty bash scripts for switch between the staging and production development environments respectively.
+
+Make the files executable by running the following in the root directory:
+```
+$ chmod u+x prod
+$ chmod u+x staging
+```
+
+For switching to the production environment
+```
+$ ./prod
+```
+
+For switching to the production environment
+```
+$ ./staging
+```
 
 ## Committing to Github:
 **Make sure that your submodule branches and root repo branch are on the intended branches for commits**

@@ -1,8 +1,19 @@
 #!/bin/bash
 
+grn=$'\e[1;32m'
+yel=$'\e[1;33m'
+cyn=$'\e[1;36m'
+end=$'\e[0m'
+
+
+git checkout master
+printf "%s\n" "${cyn}Superproject${end} repository ${grn}successfully${end} checked out ${yel}master${end} branch!"
 cd backend
 git fetch
 git checkout master
+printf "%s\n" "${cyn}Backend${end} repository ${grn}successfully${end} checked out ${yel}master${end} branch!"
 cd ../frontend
 git fetch
 git checkout master
+printf "%s\n" "${cyn}Frontend${end} repository ${grn}successfully${end} checked out ${yel}master${end} branch!"
+cd ..
