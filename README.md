@@ -3,7 +3,7 @@
 `git clone --recurse-submodules https://github.com/powwow-capstone/spacemonitor.git`
 
 ## Information about the project repository structure
-The root directory currently has 3 main directories: `backend` (submodule), `frontend` (submodule), and `data_analysis`
+The project root directory currently has 3 main directories: `backend` (submodule), `frontend` (submodule), and `data_analysis`
 Submodules: https://git-scm.com/book/en/v2/Git-Tools-Submodules
 
 > Each of the `backend` and `frontend` directories are Github repositories (I'll call them subrepos) and are linked to our working repository as submodules. In order to commit changes in both the superproject repository and the corrpesonding Github repository, we need to commit changes to both the subrepos and the superproject repository. See more about commits in the "Committing to Github" section.
@@ -14,7 +14,7 @@ Submodules: https://git-scm.com/book/en/v2/Git-Tools-Submodules
 ## Switching between the staging and production environments (i.e. staging branch and master branch respectively)
 The `staging` and `prod` files are quick and dirty bash scripts for switch between the staging and production development environments respectively.
 
-Make the files executable by running the following in the root directory:
+Make the files executable by running the following in the project root directory:
 ```
 $ chmod u+x prod
 $ chmod u+x staging
@@ -36,7 +36,7 @@ $ ./staging
 If typing `git status` returns one of the submodule directories as modified or untracked. 
 
 ### Example Commit
-For example, I've updated a file in the `frontend` submodule directory I want to push my updates to BOTH the superproject repo and the submodule repo. Running `git status` in the root directory produces the following output:
+For example, I've updated a file in the `frontend` submodule directory I want to push my updates to BOTH the superproject repo and the submodule repo. Running `git status` in the project root directory produces the following output:
 ```
 $ git status
 On branch master
@@ -63,7 +63,7 @@ $ git commit -m "Updated map"
 3. Push your changes.
 `git push origin <branch>`
 
-4. Return to the root directory. Note that the frontend directory shows "(new commits)" instead of "(modified)" now
+4. Return to the project root directory. Note that the frontend directory shows "(new commits)" instead of "(modified)" now
 ```
 $ cd ..
 $ git status
