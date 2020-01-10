@@ -1,7 +1,9 @@
 # powwowEnergyCapstone
 ## Cloning this repo:
 > **IMPORTANT**
-`git clone --recurse-submodules https://github.com/powwow-capstone/spacemonitor.git`
+```
+git clone --recurse-submodules https://github.com/powwow-capstone/spacemonitor.git
+```
 
 ## Information about the project repository structure
 The project root directory currently has 3 main directories: `backend` (submodule), `frontend` (submodule), and `data_analysis`
