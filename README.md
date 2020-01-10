@@ -52,7 +52,9 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 1. Change to the modified/untracked directory.
-`$ cd frontend`
+```
+$ cd frontend
+```
 
 2. Add and commit your changes to the submodule's own repository.
 ```
@@ -61,7 +63,9 @@ $ git commit -m "Updated map"
 ```
 
 3. Push your changes.
-`git push origin <branch>`
+```
+git push origin <branch>
+```
 
 4. Return to the project root directory. Note that the frontend directory shows "(new commits)" instead of "(modified)" now
 ```
