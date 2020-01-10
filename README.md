@@ -2,6 +2,15 @@
 ## Cloning this repo:
 `git clone --recurse-submodules https://github.com/powwow-capstone/spacemonitor.git`
 
+## Information about the project repository structure
+The root directory currently has 3 main directories: `backend` (submodule), `frontend` (submodule), and `data_analysis`
+Submodules: https://git-scm.com/book/en/v2/Git-Tools-Submodules
+
+> Each of the `backend` and `frontend` directories are Github repositories (I'll call them subrepos) and are linked to our working repository as submodules. In order to commit changes in both the superproject repository and the corrpesonding Github repository, we need to commit changes to both the subrepos and the superproject repository. See more about commits in the "Committing to Github" section.
+
+> The `data_analysis` directory is a regular directory.
+
+
 ## Switching between the staging and production environments (i.e. staging branch and master branch respectively)
 The `staging` and `prod` files are quick and dirty bash scripts for switch between the staging and production development environments respectively.
 
@@ -22,7 +31,7 @@ $ ./staging
 ```
 
 ## Committing to Github:
-**Make sure that your submodule branches and root repo branch are on the intended branches for commits**
+> **Make sure that your submodule branches and root repo branch are on the intended branches for commits**
 
 If typing `git status` returns one of the submodule directories as modified or untracked. 
 
