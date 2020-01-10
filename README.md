@@ -22,13 +22,15 @@ Changes not staged for commit:
 	modified:   frontend (modified content)
 
 no changes added to commit (use "git add" and/or "git commit -a")
+```
 
 1. Change to the modified/untracked directory.
 `$ cd frontend`
 
 2. Add and commit your changes to the submodule's own repository.
 ```$ git add src/components/SimpleMap.js
-$ git commit -m "Updated map"```
+$ git commit -m "Updated map"
+```
 
 3. Push your changes.
 `git push origin <branch>`
@@ -44,12 +46,14 @@ Changes not staged for commit:
   (use "git restore <file>..." to discard changes in working directory)
 	modified:   frontend (new commits)
 
-no changes added to commit (use "git add" and/or "git commit -a")```
+no changes added to commit (use "git add" and/or "git commit -a")
+```
 
 5. Add and commit the changes to the submodule.
 ```$ git add frontend
 git commit -m "Updated SimpleMap.js in frontend"
-git push origin <branch>```
+git push origin <branch>
+```
 
 ## NEW Instructions:
 
