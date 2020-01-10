@@ -1,4 +1,4 @@
-# powwowEnergyCapstone
+# PLEASE READ ME
 
 ## Cloning this repo:
 > **IMPORTANT**
