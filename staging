@@ -1,20 +1,21 @@
-#!/bin/bash
+sub#!/bin/bash
 
 grn=$'\e[1;32m'
 yel=$'\e[1;33m'
 cyn=$'\e[1;36m'
 end=$'\e[0m'
 
+git fetch
 git checkout staging
-printf "%s\n" "${cyn}powwow-capstone/spacemonitor${end} repository ${grn}successfully${end} checked out ${yel}staging${end} branch!"
+printf "%s\n" "${cyn}powwow-capstone/spacemonitor${end} repository ${grn}successfully${end} checked out its ${yel}staging${end} branch!"
 cd backend
 git fetch
 git checkout staging
-printf "%s\n" "${cyn}powwow-capstone/backend${end} repository ${grn}successfully${end} checked out ${yel}staging${end} branch!"
+git submodule update --remote --merge
+printf "%s\n" "${cyn}powwow-capstone/backend${end} repository ${grn}successfully${end} checked out and updated its ${yel}staging${end} branch!"
 cd ../frontend
 git fetch
 git checkout staging
-printf "%s\n" "${cyn}powwow-capstone/frontend${end} repository ${grn}successfully${end} checked out ${yel}staging${end} branch!"
+git submodule update --remote --merge
+printf "%s\n" "${cyn}powwow-capstone/frontend${end} repository ${grn}successfully${end} checked out its ${yel}staging${end} branch!"
 cd ..
-git submodule update --remote --recursive --merge
-printf "%s\n" "${cyn}powwow-capstone/frontend${end} and ${cyn}powwow-capstone/backend${end} submodules ${grn}successfully${end} merged the commit recorded in the superproject into the ${yel}staging${end} branch of each submodule!"

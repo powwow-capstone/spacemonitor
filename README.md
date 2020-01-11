@@ -7,12 +7,14 @@ git clone --recurse-submodules https://github.com/powwow-capstone/spacemonitor.g
 ```
 
 ## Information about the project repository structure
-The project root directory currently has 3 main directories: `backend` ([submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)), `frontend` ([submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)), and `data_analysis`.
+Very good reference for working with submodules: https://git-scm.com/book/en/v2/Git-Tools-Submodules
 
-From Atlassian's tutorial on Git submodules:
+The project root directory currently has 3 main directories: `backend` (submodule), `frontend` (submodule), and `data_analysis`.
+
+From [Atlassian's tutorial](https://www.atlassian.com/git/tutorials/git-submodule) on Git submodules:
 > Git submodules allow you to keep a git repository as a subdirectory of another git repository. Git submodules are simply a reference to another repository at a particular snapshot in time. Git submodules enable a Git repository  to incorporate and track version history of external code.
 
-* Each of the `backend` and `frontend` directories are Github repositories (I'll call them subrepos) and are linked to our working repository as submodules. In order to commit changes in both the superproject repository and the corrpesonding Github repository, we need to commit changes to both the subrepos and the superproject repository. See more about commits in the "Committing to Github" section.
+* As noted above, each of the `backend` and `frontend` directories are submodules and are linked to our working repository as submodules. In order to commit changes in both the superproject repository and the corrpesonding Github repository, we need to commit changes to both the subrepos and the superproject repository. See more about commits in the "Committing to Github" section.
 
 * The `data_analysis` directory is a regular directory.
 
@@ -22,11 +24,11 @@ Production: http://space-monitor.herokuapp.com
 
 Staging: http://space-monitor-staging.herokuapp.com
 
-## Switching between the staging and production environments (i.e. staging branch and master branch respectively)
+## Switching between the staging and production environments 
 
-The `staging` and `prod` files are quick and dirty bash scripts for switching between the staging and production development environments respectively.
+The `staging` and `prod` files are quick and dirty bash scripts for switching between the staging (staging branches) and production (master branches) development environments respectively across both submodules and the superproject repository.
 
-** Note that these scripts both call `git submodule update --remote --recursive --merge` and will merge with the remote superproject branch for the branch that each submodule is on **
+** Note that these scripts both call `git submodule update --remote --merge` and will merge with the remote superproject branch for the branch that each submodule is on **
 
 Make the files executable by running the following in the project root directory:
 ```
@@ -50,11 +52,11 @@ Run this to enable `git submodule update --init` whenever `git pull` is called:
 git config --global submodule.recurse true
 ```
 
-## Committing to Github:
+## Committing and pushing submodule changes to Github:
 > **Make sure that your submodule branches and root repo branch are on the intended branches for commits**
 
 
-### Example commit
+### Example
 As an example, I've updated a file in the `frontend` submodule directory and I want to push my updates to BOTH the superproject repo and the corresponding submodule repo. Running `git status` in the project root directory produces the following output:
 ```
 $ git status
@@ -70,6 +72,22 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
+#### Method 1
+```
+git push --recurse-submodules=on-demand
+```
+From the [git-scm](https://git-scm.com/book/en/v2/Git-Tools-Submodules) tutorial:
+> [The "on-demand" option will] go into each submodule and manually push to the remotes to make sure they’re externally available and then try this push again.
+
+
+#### Method 2
+```
+git push --recurse-submodules=check
+```
+From the [git-scm](https://git-scm.com/book/en/v2/Git-Tools-Submodules) tutorial:
+> The “check” option will make push simply fail if any of the committed submodule changes haven’t been pushed.
+
+#### Method 3
 1. Change to the modified/untracked directory.
 ```
 $ cd frontend
