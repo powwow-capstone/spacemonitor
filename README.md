@@ -41,7 +41,7 @@ For switching to the production environment:
 $ ./prod
 ```
 
-For switching to the production environment:
+For switching to the staging (testing) environment:
 ```
 $ ./staging
 ```
