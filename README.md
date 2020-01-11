@@ -28,7 +28,7 @@ Staging: http://space-monitor-staging.herokuapp.com
 
 The `staging` and `prod` files are quick and dirty bash scripts for switching between the staging (staging branches) and production (master branches) development environments respectively across both submodules and the superproject repository.
 
-** Note that these scripts both call `git submodule update --remote --merge` and will merge with the remote superproject branch for the branch that each submodule is on **
+**Note that these scripts both call `git submodule update --remote --merge` and will merge with the remote superproject branch for the branch that each submodule is on**
 
 Make the files executable by running the following in the project root directory:
 ```
@@ -53,7 +53,7 @@ git config --global submodule.recurse true
 ```
 
 ## Committing and pushing submodule changes to Github:
-> **Make sure that your submodule branches and root repo branch are on the intended branches for commits**
+**Make sure that your submodule branches and root repo branch are on the intended branches for commits**
 
 
 ### Example
