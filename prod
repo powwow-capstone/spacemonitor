@@ -12,10 +12,10 @@ cd backend
 git fetch
 git checkout master
 git submodule update --remote --merge
-printf "%s\n" "${cyn}powwow-capstone/backend${end} repository ${grn}successfully${end} checked out and updated its ${yel}master${end} branch!"
+printf "%s\n" "${cyn}powwow-capstone/backend${end} submodule ${grn}successfully${end} checked out and updated its ${yel}master${end} branch!"
 cd ../frontend
 git fetch
 git checkout master
 git submodule update --remote --merge
-printf "%s\n" "${cyn}powwow-capstone/frontend${end} repository ${grn}successfully${end} checked out its ${yel}master${end} branch!"
+printf "%s\n" "${cyn}powwow-capstone/frontend${end} submodule ${grn}successfully${end} checked out and updated its ${yel}master${end} branch!"
 cd ..
