@@ -9,9 +9,12 @@ git clone --recurse-submodules https://github.com/powwow-capstone/spacemonitor.g
 ## Information about the project repository structure
 The project root directory currently has 3 main directories: `backend` ([submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)), `frontend` ([submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules)), and `data_analysis`.
 
-> Each of the `backend` and `frontend` directories are Github repositories (I'll call them subrepos) and are linked to our working repository as submodules. In order to commit changes in both the superproject repository and the corrpesonding Github repository, we need to commit changes to both the subrepos and the superproject repository. See more about commits in the "Committing to Github" section.
+From Atlassian's tutorial on Git submodules:
+> Git submodules allow you to keep a git repository as a subdirectory of another git repository. Git submodules are simply a reference to another repository at a particular snapshot in time. Git submodules enable a Git repository  to incorporate and track version history of external code.
 
-> The `data_analysis` directory is a regular directory.
+* Each of the `backend` and `frontend` directories are Github repositories (I'll call them subrepos) and are linked to our working repository as submodules. In order to commit changes in both the superproject repository and the corrpesonding Github repository, we need to commit changes to both the subrepos and the superproject repository. See more about commits in the "Committing to Github" section.
+
+* The `data_analysis` directory is a regular directory.
 
 Additionally, both the `frontend` and `backend` repositories each have a `staging` branch. Every push to the `master` branch of the `frontend` and `backend` repositories will be automatically deployed to the production instance of our Heroku web app. Every push to the `staging` branch of these repositories will be automatically deployed to staging (testing) instance of our Heroku web app.
 
@@ -21,7 +24,9 @@ Staging: http://space-monitor-staging.herokuapp.com
 
 ## Switching between the staging and production environments (i.e. staging branch and master branch respectively)
 
-The `staging` and `prod` files are quick and dirty bash scripts for switch between the staging and production development environments respectively.
+The `staging` and `prod` files are quick and dirty bash scripts for switching between the staging and production development environments respectively.
+
+** Note that these scripts both call `git submodule update --remote --recursive --merge` and will merge with the remote superproject branch for the branch that each submodule is on **
 
 Make the files executable by running the following in the project root directory:
 ```
@@ -29,14 +34,20 @@ $ chmod u+x prod
 $ chmod u+x staging
 ```
 
-For switching to the production environment
+For switching to the production environment:
 ```
 $ ./prod
 ```
 
-For switching to the production environment
+For switching to the production environment:
 ```
 $ ./staging
+```
+
+## Pulling the latest changes from Github
+Run this to enable `git submodule update --init` whenever `git pull` is called:
+```
+git config --global submodule.recurse true
 ```
 
 ## Committing to Github:
@@ -72,7 +83,7 @@ $ git commit -m "Updated map"
 
 3. Push your changes.
 ```
-git push origin <branch>
+$ git push origin <branch>
 ```
 
 4. Return to the project root directory and run `git status`. Note that the frontend directory shows "(new commits)" instead of "(modified)" now

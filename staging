@@ -16,3 +16,5 @@ git fetch
 git checkout staging
 printf "%s\n" "${cyn}powwow-capstone/frontend${end} repository ${grn}successfully${end} checked out ${yel}staging${end} branch!"
 cd ..
+git submodule update --remote --recursive --merge
+printf "%s\n" "${cyn}powwow-capstone/frontend${end} and ${cyn}powwow-capstone/backend${end} submodules ${grn}successfully${end} merged the commit recorded in the superproject into the ${yel}staging${end} branch of each submodule!"
