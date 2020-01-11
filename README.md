@@ -47,10 +47,10 @@ $ ./staging
 ```
 
 ## Pulling the latest changes from Github
-Run this to enable `git submodule update --init` whenever `git pull` is called:
-```
-git config --global submodule.recurse true
-```
+In order to properly update submodules, please refer to the "Pulling Upstream Changes from the Project Remote" section of the [git-scm submodules tutorial](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+
+From the [git-scm tutorial](https://git-scm.com/book/en/v2/Git-Tools-Submodules):
+> By default, the git pull command recursively fetches submodules changes, as we can see in the output of the first command above. However, it does not update the submodules. This is shown by the output of the git status command, which shows the submodule is “modified”, and has “new commits”. What’s more, the brackets showing the new commits point left (<), indicating that these commits are recorded in MainProject but are not present in the local DbConnector checkout. To finalize the update, you need to run git submodule update:
 
 ## Committing and pushing submodule changes to Github:
 **Make sure that your submodule branches and root repo branch are on the intended branches for commits**
@@ -76,7 +76,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 git push --recurse-submodules=on-demand
 ```
-From the [git-scm](https://git-scm.com/book/en/v2/Git-Tools-Submodules) tutorial:
+From the [git-scm tutorial](https://git-scm.com/book/en/v2/Git-Tools-Submodules):
 > [The "on-demand" option will] go into each submodule and manually push to the remotes to make sure they’re externally available and then try this push again.
 
 
@@ -84,7 +84,7 @@ From the [git-scm](https://git-scm.com/book/en/v2/Git-Tools-Submodules) tutorial
 ```
 git push --recurse-submodules=check
 ```
-From the [git-scm](https://git-scm.com/book/en/v2/Git-Tools-Submodules) tutorial:
+From the [git-scm tutorial](https://git-scm.com/book/en/v2/Git-Tools-Submodules):
 > The “check” option will make push simply fail if any of the committed submodule changes haven’t been pushed.
 
 #### Method 3
