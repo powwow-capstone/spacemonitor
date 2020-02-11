@@ -25,6 +25,8 @@ services:
     volumes:
       - ./frontend/src:/usr/src/app/src
       - ./frontend/public:/usr/src/app/public
+    env_file:
+      - .env2
     environment:
       - HOST=0.0.0.0
     links:
