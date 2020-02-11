@@ -20,8 +20,8 @@ services:
       - 3000
     ports:
       - 3000:3000
-    # env_file:
-    #   - .env
+    env_file:
+      - .env2
     volumes:
       - ./frontend/src:/usr/src/app/src
       - ./frontend/public:/usr/src/app/public
